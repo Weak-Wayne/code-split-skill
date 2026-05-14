@@ -119,7 +119,7 @@ For detailed usage instructions, configuration options, and API reference, pleas
 
 <div align="center">
 
-**Built with ❤️ by [@2968567633-cell](https://github.com/Weak-Wayne)**
+**Built with ❤️ by [@Weak-Wayne](https://github.com/Weak-Wayne)**
 
 [Documentation](./index.md) · [Report Issues](https://github.com/Weak-Wayne/code-split-skill/issues) · [Install](#-quick-start)
 
