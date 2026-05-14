@@ -1,0 +1,166 @@
+{
+  "name": "code-split-skill",
+  "displayName": "代码模块化拆分",
+  "description": "帮助AI模型在生成代码时进行模块功能分析，将不同业务逻辑拆分到独立文件中，避免单文件过大问题。支持新项目创建和已有项目重构两种模式。",
+  "version": "1.0.0",
+  "author": "CodeSplit Team",
+  "license": "MIT",
+  "tags": ["code", "modular", "split", "architecture", "best-practices", "typescript", "refactoring"],
+  
+  "installation": {
+    "type": "github",
+    "url": "https://github.com/your-username/code-split-skill"
+  },
+  
+  "requirements": [],
+  
+  "config": {
+    "defaultModuleTypes": ["auth", "api", "components", "utils", "hooks", "config", "types", "stores", "layouts", "pages"],
+    "enableAutoSplit": true,
+    "requireAnalysisDoc": true,
+    "maxFileLines": 200,
+    "maxFunctionLines": 50,
+    "styleGuidePath": "references/styleguide.md",
+    "templatesPath": "references/templates.md",
+    "scriptsPath": "scripts/"
+  },
+  
+  "modules": {
+    "create-project": {
+      "displayName": "新项目创建",
+      "description": "从0到1规范建立项目结构，自动创建模块化目录",
+      "triggers": {
+        "exact": [
+          "使用代码模块化拆分创建",
+          "创建新项目",
+          "初始化项目结构"
+        ],
+        "contextual": [
+          "帮我创建一个",
+          "新建项目",
+          "初始化项目",
+          "搭建项目"
+        ],
+        "exclude": [
+          "重构",
+          "拆分",
+          "已有项目",
+          "现有项目"
+        ]
+      }
+    },
+    "refactor-project": {
+      "displayName": "已有项目重构",
+      "description": "分析已有项目，提供模块化拆分建议（只读模式，不修改文件）",
+      "triggers": {
+        "exact": [
+          "使用代码模块化拆分重构",
+          "重构已有项目",
+          "拆分现有代码"
+        ],
+        "contextual": [
+          "重构代码",
+          "拆分代码",
+          "分析项目",
+          "优化结构"
+        ],
+        "exclude": [
+          "创建",
+          "新建",
+          "初始化",
+          "搭建"
+        ]
+      }
+    }
+  },
+  
+  "triggers": {
+    "exact": [
+      "使用代码模块化拆分",
+      "用code-split-skill",
+      "请模块化编写",
+      "按模块拆分"
+    ],
+    "contextual": [
+      "帮我创建一个",
+      "实现一个",
+      "创建项目",
+      "写代码",
+      "编写代码",
+      "重构代码",
+      "拆分代码"
+    ],
+    "exclude": [
+      "什么是",
+      "如何",
+      "怎么",
+      "解释",
+      "文档",
+      "说明",
+      "你好",
+      "谢谢"
+    ]
+  },
+  
+  "execution": {
+    "type": "prompt",
+    "promptPath": "prompt.md"
+  },
+  
+  "tools": [
+    {
+      "name": "generate-structure",
+      "description": "自动生成模块化项目结构（适合新项目）",
+      "command": "python3 scripts/generate-structure.py {path}",
+      "parameters": {
+        "path": {
+          "type": "string",
+          "description": "目标目录路径",
+          "default": "./"
+        }
+      },
+      "module": "create-project"
+    },
+    {
+      "name": "validate-structure",
+      "description": "验证项目结构是否符合模块化规范（通用）",
+      "command": "python3 scripts/validate-structure.py {path}",
+      "parameters": {
+        "path": {
+          "type": "string",
+          "description": "项目目录路径",
+          "default": "./"
+        }
+      }
+    },
+    {
+      "name": "analyze-and-split",
+      "description": "分析已有项目中的大型文件，提供模块化拆分建议（只读模式，适合重构）",
+      "command": "python3 scripts/analyze-and-split.py {path}",
+      "parameters": {
+        "path": {
+          "type": "string",
+          "description": "项目目录路径",
+          "default": "./"
+        },
+        "output_plan": {
+          "type": "string",
+          "description": "拆分计划导出文件路径",
+          "default": ""
+        }
+      },
+      "module": "refactor-project"
+    }
+  ],
+  
+  "references": [
+    {
+      "name": "代码风格指南",
+      "path": "references/styleguide.md"
+    },
+    {
+      "name": "代码模板库",
+      "path": "references/templates.md"
+    }
+  ]
+}
