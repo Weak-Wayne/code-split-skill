@@ -70,7 +70,7 @@ code-split-skill/
 
 ### Install
 ```bash
-git clone https://github.com/2968567633-cell/code-split-skill ~/.trae/skills/code-split-skill
+git clone https://github.com/Weak-Wayne/code-split-skill 
 ```
 
 ### Run Tools
@@ -120,8 +120,8 @@ For detailed usage instructions, configuration options, and API reference, pleas
 
 <div align="center">
 
-**Built with ❤️ by [@2968567633-cell](https://github.com/2968567633-cell)**
+**Built with ❤️ by [@2968567633-cell](https://github.com/Weak-Wayne)**
 
-[Documentation](./index.md) · [Report Issues](https://github.com/2968567633-cell/code-split-skill/issues) · [Install](#-quick-start)
+[Documentation](./index.md) · [Report Issues](https://github.com/Weak-Wayne/code-split-skill/issues) · [Install](#-quick-start)
 
 </div>
