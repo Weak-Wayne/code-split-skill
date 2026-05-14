@@ -21,7 +21,7 @@
 
 ```bash
 # 克隆仓库到本地
-git clone https://github.com/2968567633-cell/code-split-skill.git
+git clone https://github.com/Weak-Wayne/code-split-skill.git
 ```
 
 然后根据所使用的IDE，将技能包安装到对应的技能目录：
@@ -39,7 +39,7 @@ git clone https://github.com/2968567633-cell/code-split-skill.git
 
 ```bash
 # 克隆仓库
-git clone https://github.com/2968567633-cell/code-split-skill.git
+git clone https://github.com/Weak-Wayne/code-split-skill.git
 
 # 进入目录
 cd code-split-skill
